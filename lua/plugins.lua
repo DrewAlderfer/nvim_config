@@ -47,6 +47,10 @@ return packer.startup(function(use)
 	use { "nvim-lua/plenary.nvim" }
 	use { "windwp/nvim-autopairs" }
 
+	-- LSP Configuration
+	use { "williamboman/nvim-lsp-installer",
+				"neovim/nvim-lspconfig",
+	}
 
 	-- colorschemes
 	use { "gruvbox-community/gruvbox" }

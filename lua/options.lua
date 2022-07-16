@@ -17,6 +17,5 @@ vim.opt.wrap = false
 vim.opt.scrolloff = 20
 vim.opt.sidescrolloff = 10
 vim.opt.hlsearch = false
-vim.opt.mouse = "a"
 vim.opt.fileencoding = "utf-8"
 vim.opt.smartindent = true
