@@ -2,6 +2,7 @@ local keymap = vim.keymap.set
 
 local opts = { silent = true }
 
+
 -- Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -9,6 +10,14 @@ vim.g.mapleader = " "
 -- Remove Ctrl-Z
 keymap("n", "<C-z>", "<Nop>", opts)
 
+-- Remove mouse Clicking
+keymap("", "<LeftMouse>", "<Nop>", opts)
+keymap("", "<LeftDrag>", "<Nop>", opts)
+keymap("", "<LeftRelease>", "<Nop>", opts)
+
+keymap("", "<RightMouse>", "<Nop>", opts)
+keymap("", "<RightDrag>", "<Nop>", opts)
+keymap("", "<RightRelease>", "<Nop>", opts)
 
 -- Normal Mode --
 

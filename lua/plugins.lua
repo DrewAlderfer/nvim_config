@@ -46,11 +46,32 @@ return packer.startup(function(use)
 	use { "wbthomason/packer.nvim" }
 	use { "nvim-lua/plenary.nvim" }
 	use { "windwp/nvim-autopairs" }
+	use { "L3MON4D3/LuaSnip" }
 
+	-- Show Colors behind hex codes
+--	use { "norcalli/nvim-colorizer.lua",
+--				config = function()
+--					require("colorizer").setup()
+--				end
+--	}
 	-- LSP Configuration
 	use { "williamboman/nvim-lsp-installer",
 				"neovim/nvim-lspconfig",
 	}
+	use { "onsails/lspkind.nvim" }
+
+	-- Completion
+	use { "hrsh7th/nvim-cmp" }
+	use { "hrsh7th/cmp-buffer" }
+	use { "hrsh7th/cmp-path" }
+	use { "hrsh7th/cmp-nvim-lua" }
+	use { "hrsh7th/cmp-nvim-lsp" }
+	use { "hrsh7th/cmp-nvim-lsp-document-symbol" }
+	use { "saadparwaiz1/cmp_luasnip" }
+	use { "tamago324/cmp-zsh" }
+
+	-- Comparators
+	use { "lukas-reineke/cmp-under-comparator" }
 
 	-- colorschemes
 	use { "gruvbox-community/gruvbox" }
@@ -69,14 +90,14 @@ return packer.startup(function(use)
 	-- Tree Explorer
 	use { "kyazdani42/nvim-web-devicons" }
 	use { "kyazdani42/nvim-tree.lua" }
-	
+
 	-- GitSigns
 	use { "lewis6991/gitsigns.nvim",
 				config = function()
 					require('gitsigns').setup()
 				end
 	}
-	
+
 	-- Spellsitter
 	use { "lewis6991/spellsitter.nvim",
 				config = function()

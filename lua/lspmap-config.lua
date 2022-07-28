@@ -37,6 +37,39 @@ local on_attach = function(client, bufnr)
 	keymap('n', '<leader>mf', buff.formatting, bopts)
 end
 
+require('lspkind').init {
+	mode = "symbol_text",
+
+	preset = "codicons",
+
+	symbol_map = {
+      Text = "",
+      Method = "",
+      Function = "",
+      Constructor = "",
+      Field = "ﰠ",
+      Variable = "",
+      Class = "ﴯ",
+      Interface = "",
+      Module = "",
+      Property = "ﰠ",
+      Unit = "塞",
+      Value = "",
+      Enum = "",
+      Keyword = "",
+      Snippet = "",
+      Color = "",
+      File = "",
+      Reference = "",
+      Folder = "",
+      EnumMember = "",
+      Constant = "",
+      Struct = "פּ",
+      Event = "",
+      Operator = "",
+      TypeParameter = ""
+	},
+}
 -- Lsp server managment
 require("nvim-lsp-installer").setup {
 	automatic_installation = true,
@@ -50,3 +83,4 @@ require("nvim-lsp-installer").setup {
 }
 
 require("lspconfig").sumneko_lua.setup {}
+require("lspconfig").pylsp.setup {}
