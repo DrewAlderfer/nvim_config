@@ -1,8 +1,4 @@
-require "options"
-require "plugins"
-require "mappings"
-require "tree-sitter"
-require "nvimtree"
-require "lspmap-config"
-require "completion"
+require('andrew_lptp')
+
+vim.g.snippets = "luasnip"
 
