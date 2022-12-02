@@ -1,7 +1,10 @@
 local sumneko_root_path = "C:/Users/Drew Alderfer/.local/bin/sumneko_lua_server"
 local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
+local marksman_binary = "C:/Users/Drew Alderfer/.local/bin/marksman"
 
+-- require'lspconfig'.jedi_language_server.setup{}
 require'lspconfig'.pyright.setup{}
+
 require'lspconfig'.sumneko_lua.setup{
     cmd = { sumneko_binary },
     settings = {

@@ -1,9 +1,12 @@
 if vim.g.snippets ~= "luasnip" or not pcall(require, "luasnip") then
+local fmt          = require("fmt")
     return
 end
 
 local ls = require "luasnip"
 local types = require "luasnip.util.types"
+
+print("Hello, From Luasnip")
 
 ls.config.set_config {
     -- This tells LuaSnip to remember to keep around the last snippet.
@@ -17,9 +20,14 @@ ls.config.set_config {
     enable_autosnippets = true,
 
     ext_opts = {
+        [types.insertNode] = {
+            active = {
+                virt_text = { { "●", "GruvboxRed"} },
+            }
+        },
         [types.choiceNode] = {
             active = {
-                virt_text = { { " « ", "Error" } },
+                virt_text = { { " ●", "GruvboxBlue" } },
             },
         },
     },
@@ -68,6 +76,8 @@ local d = ls.dynamic_node
 local l = require("luasnip.extras").lambda
 
 local events = require "luasnip.util.events"
+local rep = require("luasnip.extras").rep
+local fmt = require("luasnip.extras.fmt").fmt
 
 ls.add_snippets("all", {
 
@@ -84,3 +94,49 @@ ls.add_snippets("all", {
         },
     }),
 })
+
+ls.add_snippets(
+    "python",{
+    snippet("traintest", fmt(
+    [[
+    y = {1}['{2}']
+    X = {3}.drop(['{4}'], axis=1)
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size={5})
+    ]],
+    {
+        i(1, "df"),
+        i(2, ""),
+        rep(1),
+        rep(2),
+        i(5, ".25")
+    }
+    )),
+    snippet("opand", fmt(
+    [[
+    {1} = pd.{2}({3})
+
+    {4}.info()
+    ]],
+    {
+    i(1, "df"),
+    i(2, "read_csv"),
+    i(3, "file_name"),
+    rep(1)
+    }
+    )),
+    snippet("col_vc", fmt(
+    [[
+    col_names = {1}.columns
+    for col in col_names:
+        {2}[col].value_counts
+    ]],
+    {
+        i(1, "df"),
+        rep(1)
+    }
+    ))
+}
+)
+
+

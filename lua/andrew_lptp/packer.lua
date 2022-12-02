@@ -10,6 +10,23 @@ return require('packer').startup(function(use)
 
   -- LSP Config
   use('neovim/nvim-lspconfig')
+  use({'glepnir/lspsaga.nvim',
+        branch = "main",
+        config = function()
+            local saga = require("lspsaga")
+            saga.init_lsp_saga({
+                --config
+            })
+        end,
+    })
+  use({"jose-elias-alvarez/null-ls.nvim",
+        config = function ()
+                 require("null-ls").setup()
+             end,
+            requires = {"nvim-lua/plenary.nvim"},
+    })
+  use "stsewd/isort.nvim"
+  use "averms/black-nvim"
 
   -- Comment.nvim
   use { 'numToStr/Comment.nvim',
@@ -35,6 +52,8 @@ return require('packer').startup(function(use)
   -- Luasnips
   use('L3MON4D3/LuaSnip')
   use('saadparwaiz1/cmp_luasnip')
+  -- Snippets
+  use('rafamadriz/friendly-snippets')
 
   -- Telescope
   use( {
@@ -46,10 +65,31 @@ return require('packer').startup(function(use)
         }
   )
   -- Treesitter
-  use( {'nvim-treesitter/nvim-treesitter'
-    }
-  )
-  -- Colorschemes
-  use('sainnhe/everforest')
+  use('nvim-treesitter/nvim-treesitter')
+  use('nvim-treesitter/playground')
 
+  -- Jupyter Ascending
+  use 'untitled-ai/jupyter_ascending.vim' 
+  -- install without yarn or npm
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+  -- Lualine
+  use('nvim-lualine/lualine.nvim')
+  
+  -- Colorschemes
+  use('DrewAlderfer/gruvbox.nvim')
+  use('sainnhe/everforest')
+  use('folke/tokyonight.nvim')
+  
+  -- Colorizer
+  use({'norcalli/nvim-colorizer.lua',
+        config = function ()
+            require('colorizer').setup()
+        end
+    })
 end)
