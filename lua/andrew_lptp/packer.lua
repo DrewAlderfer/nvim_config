@@ -8,17 +8,16 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use('wbthomason/packer.nvim')
 
+  -- LSP DAP Linter Management
+  use('williamboman/mason.nvim')
+  use('williamboman/mason-lspconfig.nvim')
+
+  -- nvim-dap
+  use('mfussenegger/nvim-dap')
+  use('mfussenegger/nvim-dap-python')
+
   -- LSP Config
   use('neovim/nvim-lspconfig')
-  use({'glepnir/lspsaga.nvim',
-        branch = "main",
-        config = function()
-            local saga = require("lspsaga")
-            saga.init_lsp_saga({
-                --config
-            })
-        end,
-    })
   use({"jose-elias-alvarez/null-ls.nvim",
         config = function ()
                  require("null-ls").setup()
@@ -77,6 +76,8 @@ return require('packer').startup(function(use)
   })
 
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  -- Rust Stuff
+  use('simrat39/rust-tools.nvim')
 
   -- Lualine
   use('nvim-lualine/lualine.nvim')

@@ -4,6 +4,7 @@ require('gruvbox').setup({
 })
 vim.cmd("colorscheme gruvbox")
 -- vim.o.background = "dark"
+vim.api.nvim_set_hl(0, "Normal", {fg = nil,bg = nil})
 vim.g.gruvbox_transparent_bg = 1
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
