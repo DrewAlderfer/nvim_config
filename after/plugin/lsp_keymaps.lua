@@ -21,6 +21,7 @@ nnoremap("<leader>rn", vim.lsp.buf.rename)
 nnoremap("<leader>mf", vim.lsp.buf.format)
 nnoremap("<c-i>", vim.lsp.buf.hover)
 nnoremap("<c-s>", vim.lsp.buf.signature_help)
+nnoremap("<leader><leader>i", ":lua vim.diagnostic.open_float(nil, {focus=false, scope='line'})<CR>", bufopts)
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     vim.lsp.handlers.signature_help, {

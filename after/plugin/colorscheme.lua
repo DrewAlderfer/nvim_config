@@ -12,7 +12,8 @@ vim.opt.cursorlineopt = "number"
 
 require('lualine').setup()
 
-vim.api.nvim_set_hl(0, "@function.decorator", {fg = "#eabd4f", bg = "#35382c", bold= true})
-vim.api.nvim_set_hl(0, "Operator", {italic = false})
-vim.api.nvim_set_hl(0, "String", {fg = "#a0c77d", italic=true})
+vim.api.nvim_set_hl(0, "@function.decorator", {fg="#eabd4f", bg="#35382c", bold=true})
+vim.api.nvim_set_hl(0, "@variable", {link="Normal" })
+vim.api.nvim_set_hl(0, "Operator", {link="Delimiter"})
+vim.api.nvim_set_hl(0, "String", {fg="#a0c77d", italic=true})
 vim.api.nvim_set_hl(0, "GruvboxGreenBold", {fg = "#d0df46", bg='#35382c', bold=true})

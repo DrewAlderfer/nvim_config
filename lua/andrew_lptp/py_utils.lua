@@ -27,9 +27,9 @@ function M.runpy ()
         stdout_buffered = true,
         on_stdout = function( _, data)
             if data then
-                for i, v in ipairs(data) do
-                    data[i] = v:sub(1, -2)
-                end
+                -- for i, v in ipairs(data) do
+                --     data[i] = v:sub(1, -2)
+                -- end
                 vim.api.nvim_buf_set_lines(pop_buf, -1, -1, false, data)
             end
         end,

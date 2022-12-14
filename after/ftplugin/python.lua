@@ -6,7 +6,7 @@ local nnoremap = Remap.nnoremap
 local bufopts = { noremap=true, silent=true, buffer=bufnr}
 local run_py = require("andrew_lptp.py_utils").runpy
 
-nnoremap("<leader><leader>e",run_py)
+nnoremap("<leader><leader>x", run_py)
 
 
 
