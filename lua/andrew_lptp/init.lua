@@ -13,7 +13,7 @@ require("mason").setup({
    }
 })
 require("mason-lspconfig").setup({
-    ensure_installed = {"sumneko_lua", "rust_analyzer", "pyright", "remark_ls", "clangd"},
+    ensure_installed = {"lua_language_server", "rust_analyzer", "pyright", "remark_ls", "clangd"},
     automatic_installation = true,
 })
 require("mason-lspconfig").setup_handlers({
@@ -38,4 +38,4 @@ require("mason-lspconfig").setup_handlers({
 require('dap-python').setup('~/conda/envs/debugpy/bin/python')
 require("luasnip.loaders.from_vscode").lazy_load()
 
-vim.cmd("let g:python3_host_prog='~/conda/envs/neovim/bin/python3.10'")
+vim.cmd("let g:python3_host_prog='/usr/bin/python3'")
