@@ -32,10 +32,15 @@ nnoremap("<leader>nt", ":new<CR>") -- Open Above
 nnoremap("<leader>nl", ":vnew<CR>") -- Open Left
 
 -- Navigate Buffers
-nnoremap("<C-k>", ":bprev<CR>") -- Previous Buffer
-nnoremap("<C-j>", ":bnext<CR>") -- Next Buffer
+nnoremap("<C-k>", ":bprev<CR>zz") -- Previous Buffer
+nnoremap("<C-j>", ":bnext<CR>zz") -- Next Buffer
+
 -- Movement
 nnoremap("<c-e>", "3<c-e>")
 nnoremap("<c-y>", "3<c-y>")
+nnoremap("<c-d>", "<c-d>zz")
+nnoremap("<c-u>", "<c-u>zz")
+nnoremap("G", "Gzz")
+
 -- No Remaps
 nnoremap("<C-z>", "<NOP>")

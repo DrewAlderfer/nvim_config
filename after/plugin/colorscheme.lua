@@ -7,7 +7,7 @@ vim.cmd("colorscheme gruvbox")
 vim.g.gruvbox_transparent_bg = 1
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
--- vim.api.nvim_set_hl(0, 'CursorLineNr',{fg="#e69875"})
+vim.api.nvim_set_hl(0, 'CursorLineNr',{fg="#e69875"})
 
 require('lualine').setup()
 
@@ -15,3 +15,4 @@ vim.api.nvim_set_hl(0, "@function.decorator", {fg = "#eabd4f", bg = "#35382c", b
 vim.api.nvim_set_hl(0, "Operator", {italic = false})
 vim.api.nvim_set_hl(0, "String", {fg = "#a0c77d", italic=true})
 vim.api.nvim_set_hl(0, "GruvboxGreenBold", {fg = "#d0df46", bg='#35382c', bold=true})
+
