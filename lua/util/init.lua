@@ -60,16 +60,36 @@ function M.on_load(name, fn)
     end
 end
 
-function M.collect(list, nspace)
+function M.path_to_module(file_path)
+    if type(file_path) == "table" then
+        file_path = file_path.filename
+    end
+    for k, _ in  file_path:gmatch("lua[%w_\\/]*\\[%w_]*%.lua$", "") do
+        local namespace = k:sub(5, -5)
+        return namespace:gsub("[\\/]", ".")
+    end
+end
+
+function M.collect(nspace)
+    -- print("files found in ", nspace, ":")
+    local scan = require("plenary.scandir")
     local path = vim.fn.stdpath("config") .. "/lua/" .. nspace
-    for _, file in pairs(vim.fn.readdir(path)) do
-        if file ~= "init.lua" then
-            local target = require((nspace:gsub("/", ".") .. "." .. file:gsub("%.lua$", '')))
-            for _, value in pairs(target) do
-                table.insert(list, value)
+    -- print("searching ", path, " recursively...")
+    local files = scan.scan_dir(path)
+    -- print("found: ")
+    -- P(files)
+
+    local collected = {}
+    for _, file in pairs(files) do
+        if string.sub(file, -8) ~= "init.lua" then
+            -- print("inserting from file: ", file)
+            local module = require(M.path_to_module(file))
+            for _, entry in pairs(module) do
+                table.insert(collected, entry)
             end
         end
     end
+    return collected
 end
 
 return M

@@ -3,9 +3,7 @@ local namespace = "plugins/lsp/servers"
 -- local path = vim.fn.stdpath('config') .. '/lua/plugins/lsp/servers'
 local M = {}
 
-M.opts = {}
-
-Util.collect(M.opts, namespace)
+M.opts = Util.collect(namespace)
 -- local function collect_files (empty_guy)
     -- for _, file in ipairs(vim.fn.readdir(path, [[v:val =~ '\.lua$']])) do
         -- table.insert(empty_guy, file)

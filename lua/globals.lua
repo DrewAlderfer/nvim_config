@@ -7,5 +7,5 @@ RELOAD = function(name)
     package.loaded[name] = nil
     return require(name)
 end
-
-vim.cmd("let g:python3_host_prog='/home/drew/.local/share/rtx/installs/python/3.11.6/bin/python'")
+-- local python_path = "nothing"
+-- vim.cmd("let g:python3_host_prog="..python_path)

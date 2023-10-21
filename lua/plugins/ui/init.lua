@@ -1,8 +1,7 @@
 local Util = RELOAD("util")
 local namespace = "plugins/ui"
 
-local M = {}
-Util.collect(M, namespace)
+local M = Util.collect(namespace)
 -- for _, file in pairs(vim.fn.readdir(path)) do
     -- if file ~= "init.lua" then
         -- local target = require((namespace:gsub("/", ".") .. "." .. file:gsub("%.lua$", '')))

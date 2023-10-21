@@ -1,11 +1,9 @@
+-- \\ GLOBALS // --
 require("globals")
--- \\ Load Configs //
--- lua/config should contain 
--- 	- keymaps 
--- 	- option settings
 
--- \\ Bootstrap lazy.nvim //
---
+-- \\ BOOTSTRAP // --
+-- \\ lazy.nvim // --
+
 -- Setting up the Lazy Plugin Manager
 -- from folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -22,5 +20,5 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
+-- \\ CONFIG // --
 require("config").setup()

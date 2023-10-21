@@ -22,13 +22,15 @@ end
 
 function M.setup()
     M.options()
-    M.keymaps()
+
+    require("auc")
 
     -- Setup Plugin Manager
     require("lazy").setup("plugins")
 
     -- Setup Colorscheme
     require("tokyonight").load()
+    M.keymaps()
 end
 
 return M
