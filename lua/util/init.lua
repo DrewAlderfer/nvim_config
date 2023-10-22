@@ -64,7 +64,7 @@ function M.path_to_module(file_path)
     if type(file_path) == "table" then
         file_path = file_path.filename
     end
-    for k, _ in  file_path:gmatch("lua[%w_\\/]*\\[%w_]*%.lua$", "") do
+    for k, _ in  file_path:gmatch("lua[%w_\\/]*[\\/]*[%w_]*%.lua$", "") do
         local namespace = k:sub(5, -5)
         return namespace:gsub("[\\/]", ".")
     end
