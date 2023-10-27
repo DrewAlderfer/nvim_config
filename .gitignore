@@ -1,7 +1,7 @@
 # Manual Ignores for Neovim Setup Files
 /localsettings
 /plugin
-
+lazy-lock.json
 # Created by https://www.toptal.com/developers/gitignore/api/windows,powershell
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,powershell
 

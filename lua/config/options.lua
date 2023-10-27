@@ -1,5 +1,5 @@
-print("Options Settings")
-vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
+-- print("Options Settings")
+-- vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 vim.g.mapleader = " "
 
 local opt = vim.opt
@@ -39,7 +39,7 @@ opt.undofile = false
 opt.swapfile = false
 opt.updatetime = 200
 opt.virtualedit = "block"
-opt.wildmode = "longest:full,full"
+-- opt.wildmode = "longest:full,full"
 opt.winminwidth = 5
 opt.wrap = false
 opt.fillchars = {
@@ -72,4 +72,4 @@ end
 -- end
 
 -- Fix markdown indentation settings
-vim.g.markdown_recommended_style = 0
+-- vim.g.markdown_recommended_style = 0

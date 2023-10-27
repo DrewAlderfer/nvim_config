@@ -1,12 +1,15 @@
 return {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
-    lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
         require("neorg").setup {
             load = {
-                ["core.defaults"] = {},
+                ["core.defaults"] = {
+                    config = {
+                        disable = {},
+                    },
+                },
                 ["core.concealer"] = {},
                 ["core.summary"] = {},
                 ["core.completion"] = {
@@ -19,6 +22,7 @@ return {
                         workspaces = {
                             writing = "~/text/writing",
                             notes = "~/text/notes",
+                            wdc = "~/text/wholedaycatalogue"
                         },
                         default_workspace = "writing",
                         index = "toc.norg",
