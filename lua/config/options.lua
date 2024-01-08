@@ -37,6 +37,7 @@ opt.termguicolors = true
 opt.timeoutlen = 1000
 opt.undofile = false
 opt.swapfile = false
+opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 opt.updatetime = 200
 opt.virtualedit = "block"
 -- opt.wildmode = "longest:full,full"

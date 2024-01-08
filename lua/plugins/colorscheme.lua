@@ -6,13 +6,7 @@ return {
 		opts = {
 			style = "moon",
 			terminal_colors = true,
+            transparent = true,
 		},
-
-	},
-	{
-		"ellisonleao/gruvbox.nvim",
-		priotity = 1000,
-		config = true,
-		opts = {},
 	},
 }
