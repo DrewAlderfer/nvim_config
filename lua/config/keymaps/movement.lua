@@ -25,6 +25,9 @@ return  {
 	{"v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" }},
 	{"v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" }},
 
+    -- Edit Text
+    {"v", "<c-m>s", "c~~<C-c>hp", {desc = "Strike Selection" }},
+    {"n", "<c-m>ls", [[V:s/\(^\s*[0-9\.\*-]\{2,5}\s\{0,}\)\(.*\)/\1\~\2\~<cr>]], {desc = "List Item Strike" }},
 	-- Execute File
 	{"n", "<leader><leader>x", ":w<cr>:source %<cr>", { desc = "Execute Current File" }},
 }

@@ -1,4 +1,4 @@
-local Util = RELOAD("util")
+local Util = RELOAD("my_util")
 local namespace = "plugins/ui"
 
 local M = Util.collect(namespace)

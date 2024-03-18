@@ -60,10 +60,17 @@ end
 vim.opt.foldlevel = 99
 -- vim.opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
 
-if vim.fn.has("nvim-0.9.0") == 1 then
-  vim.opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
-end
+-- if vim.fn.has("nvim-0.9.0") == 1 then
+--   vim.opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
+-- end
 
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
 -- HACK: causes freezes on <= 0.9, so only enable on >= 0.10 for now
 -- if vim.fn.has("nvim-0.10") == 1 then
 --   vim.opt.foldmethod = "expr"

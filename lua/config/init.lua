@@ -1,5 +1,4 @@
-print("config.init")
-local Util = require("util")
+local Util = require("my_util")
 
 local M = {}
 
@@ -12,12 +11,16 @@ end
 function M.keymaps()
     local map = require("config.keymaps")
     Util.mapkeys(map)
-    print("Keymaps Loaded")
 end
 
 function M.extras()
     local extras = require("config.extras")
     return extras
+end
+
+function M.set_hlgroups()
+    local hl_settings = require("config.hl_groups")
+    return hl_settings
 end
 
 function M.setup()
@@ -29,8 +32,17 @@ function M.setup()
     require("lazy").setup("plugins")
 
     -- Setup Colorscheme
-    require("tokyonight").load()
+    require("catppuccin").load("mocha")
     M.keymaps()
+
+    local hl_settings = M.set_hlgroups()
+    for _, setting in pairs(hl_settings) do
+        local name = setting[1]
+        local val = setting[2]
+        vim.api.nvim_set_hl(0, name, val)
+    end
+
+    vim.cmd("let python3_host_prog = '~/.cache/venv/nvim/bin/python3.11'")
 end
 
 return M

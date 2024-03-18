@@ -1,4 +1,4 @@
-local Util = require("util")
+local Util = require("my_util")
 local namespace = "plugins/lsp/servers"
 -- local path = vim.fn.stdpath('config') .. '/lua/plugins/lsp/servers'
 local M = {}
