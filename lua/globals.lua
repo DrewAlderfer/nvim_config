@@ -3,6 +3,8 @@ P = function(v)
 	return v
 end
 
+vim.g.mapleader = " "
+
 RELOAD = function(name)
     package.loaded[name] = nil
     return require(name)
